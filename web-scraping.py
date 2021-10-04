@@ -15,13 +15,12 @@ class WebScrapingPadraoTISS:
 
     def getLastestPadraoTISS(self, url, fileName = 'Componente Organizacional'):
         self.accessUrl(url)
-        route = None
+        urlToDownload = None
         for row in self.soupObject.find_all('tr')[1:]: #obter todas as linhas da tabela
             if(fileName == row.text.split('\n')[1]):#obter link para download do nome do arquivo informado
-                route = row.find_all('a', href = True)[0]['href']
+                urlToDownload = row.find_all('a', href = True)[0]['href']
                 break
-        if(route):
-            urlToDownload = 'https://www.ans.gov.br' + route
+        if(urlToDownload):
             self.downloadFile(urlToDownload) #url é enviada para download do recurso
         else:
             print("[There's no route to download with file name]: ", fileName)
@@ -38,12 +37,12 @@ class WebScrapingPadraoTISS:
         except Exception as e:
             print(e)
 
-    def getHTMLContent(self, url = 'http://www.ans.gov.br/prestadores/tiss-troca-de-informacao-de-saude-suplementar'):
+    def getHTMLContent(self, url = 'https://www.gov.br/ans/pt-br/assuntos/prestadores/padrao-para-troca-de-informacao-de-saude-suplementar-2013-tiss'):
         try:
             self.accessUrl(url)
             alertLinkList = self.soupObject.find_all("a", class_="alert-link", href = True)
             #analisando a estrutura do site, percebe-se que as versões mais atuais são adicionadas no topo da página
-            urlToRequest = 'http://www.ans.gov.br' + alertLinkList[0]['href'] #rota obtida do atributo href é concatenada com url base
+            urlToRequest = alertLinkList[0]['href'] #obtido link para acesso à versão mais recente
             print('[Requesting content from]: ', urlToRequest)
             self.getLastestPadraoTISS(urlToRequest)
         except Exception as e:

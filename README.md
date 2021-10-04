@@ -12,7 +12,7 @@ Tarefas de código:
 
 # How to run
 
-Antes de executar, é preciso instalar as seguintes bibliotecas. Para o Windows, simplesmente remova o ``` sudo ``` da linha de comando.
+Antes de executar, é preciso instalar o gerenciador de pacotes pip ou qualquer outro de sua preferência. Uma vez instalado, execute os seguintes comandos listados abaixo. Para o ambiente Windows, simplesmente remova o ``` sudo ``` da linha de comando.
 
 ```
 sudo pip install requests

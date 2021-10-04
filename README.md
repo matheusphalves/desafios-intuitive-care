@@ -22,7 +22,7 @@ sudo pip install beautifulsoup4
 # Docs
 
 ## Classe
-```WebScrapingPadraoTISS```: classe responsável por efetuar o download do Padrão TISS mais recente.
+```WebScrapingPadraoTISS```: classe responsável por efetuar o download do recurso do Padrão TISS mais recente.
 
 ## Métodos
 

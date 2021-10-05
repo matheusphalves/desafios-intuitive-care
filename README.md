@@ -13,6 +13,11 @@ Tarefas de código:
 
 # How to run
 
+Antes de executar, é preciso instalar o gerenciador de pacotes pip ou qualquer outro de sua preferência. Uma vez instalado (pip), execute os seguintes comandos listados abaixo. Para o ambiente Windows, simplesmente remova o ``` sudo ``` da linha de comando.
+
+```
+sudo pip install tabula-py
+```
 
 
 # Docs

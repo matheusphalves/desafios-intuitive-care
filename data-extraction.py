@@ -34,6 +34,7 @@ class TableExtractor:
         for file in files:#exibe arquivos .csv a serem zipados
             zipObject.write(file.split('\\')[-1])
             print(file.split('\\')[-1])
+        zipObject.close()
         print('[Created zip file at]: ', os.getcwd())
 
 

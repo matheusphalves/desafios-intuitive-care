@@ -22,6 +22,21 @@ sudo pip install tabula-py
 
 # Docs
 
+``` extractTables ``` método responsável pela execução do fluxo proposto pelo desafio.
+
+``` readPDFTables ``` método efetua a leitura do PDF. Podendo ser informado um delimitador de páginas e os nomes das tabelas de interesse de serem extraídas. O delimitador pode ser inserido nos seguintes formatos, por exemplo:
+```
+all
+1-2
+```
+
+``` checkTableNames ``` método irá verificar se as tabelas extraídas combinam com os nomes informados pelo usuário. Em caso contrário, o fluxo de execução é encerrado. 
+
+``` convertToCSV ``` método efetua o salvamento dos data frames extraídos. 
+
+``` zipData ``` método realiza o salvamento dos arquivos de uma dada extensão (nesse caso, os arquivos em .csv)
+
+
 
 
 

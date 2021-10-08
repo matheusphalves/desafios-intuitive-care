@@ -1,5 +1,6 @@
+import json
 from flask import Flask, request, jsonify
-from service.queryService import QueryService
+from domain.queryService import QueryService
 
 #criada instancia da classe
 app = Flask(__name__)
@@ -12,7 +13,8 @@ def queryItems():
     content = request.json
     result = qS.searchItems(content['query'])
     if(len(result)>0):
-        return jsonify(result)
+        toSend = [json.dumps(item, default=lambda o: o.__dict__) for item in result]
+        return jsonify(toSend)
     return jsonify(success=False)
 
 #-----------APLICAÇÃO DISPONÍVEL NA PORTA 5100

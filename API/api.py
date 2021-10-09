@@ -1,9 +1,12 @@
 import json
+import jsonpickle
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from domain.queryService import QueryService
 
 #criada instancia da classe
 app = Flask(__name__)
+CORS(app)
 qS = QueryService()
 qS.readCSV(filePath='resources/Relatorio_cadop.csv')
 #-----------INTERAÇÃO COM O FRONT
@@ -13,8 +16,10 @@ def queryItems():
     content = request.json
     result = qS.searchItems(content['query'])
     if(len(result)>0):
-        toSend = [json.dumps(item, default=lambda o: o.__dict__) for item in result]
-        return jsonify(toSend)
+        toSend = [jsonpickle.encode(item.__dict__) for item in result]
+        response = jsonify(toSend)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
     return jsonify(success=False)
 
 #-----------APLICAÇÃO DISPONÍVEL NA PORTA 5100

@@ -23,7 +23,7 @@ sudo pip install flask
 sudo pip install flask_cors
 ```
 
-Serving on port 5100.
+Está servindo na porta 5100. Como uma próxima etapa, tinha planos de subir o servidor no Heroku, para posteriormente ser integrado ao front-end.
 
 
 # API route
@@ -36,11 +36,14 @@ Serving on port 5100.
 } 
 ```
 
-Até o momento, estou tendo dificuldades na serialização do objeto Operadora para o formato JSON.
-
 # FRONT-END
 
-Esta é a minha primeira vez utiizando o Vue.js, então ainda estou amadurecendo o compreendimento de sua arquitetura e como utilizar as suas boas práticas. De qualquer forma, peço perdão - estou estudando o framework!
+Esta é a minha primeira vez utiizando o Vue.js, então ainda estou amadurecendo o compreendimento de sua arquitetura e como utilizar as suas boas práticas. Como possuo familiaridade com o Angular, compreendo que os seguintes passos ainda deveriam ser implementados (melhorados)
+
+- Componetização das responsabilidades (tentei fazer isso, como consta no histórico de versões)
+- Implementação de serviços para consumir a API
+- Implementação de modais para melhor exibição dos resultados para o usuário
+- Utilização de variáveis de ambiente de desenvolvimento e produção. Em especial, para a definição das URL da API caso estivesse implantada.
 
 # NPM packages
 

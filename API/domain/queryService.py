@@ -20,15 +20,14 @@ class QueryService:
     def searchItems(self, queryText):
         returnItems = []
         if(len(self.items)):
+            queryText = queryText.upper()
             for item in self.items:
-                currentText = ''.join(str(element.lower()) for element in item)
+                currentText = ''.join(str(element.upper()) for element in item)
                 if(currentText.find(queryText)!=-1): #algo foi encontrado
-                    toSave = currentText.split(';')
-                    returnItems.append(Operadora(toSave))
-        print(returnItems)
+                    content = currentText.split(';')
+                    returnItems.append(
+                        Operadora(content[0], content[1], content[2], content[3], content[4], content[5],
+                        content[6], content[7], content[8], content[9], content[10], content[11], content[12], content[13], content[14],
+                        content[15], content[16], content[17], content[18])
+                    )
         return returnItems
-
-
-#teste = QueryService()
-#teste.readCSV('../resources/Relatorio_cadop.csv')
-#print(teste.searchItems('11828089000103')[0].toJSON())

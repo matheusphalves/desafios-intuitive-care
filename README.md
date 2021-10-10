@@ -47,8 +47,8 @@ Esta é a minha primeira vez utiizando o Vue.js, então ainda estou amadurecendo
 
 # NPM packages
 
-axios
-bootstrap (UI library)
+- axios
+- bootstrap (UI library)
 
 
 

@@ -28,7 +28,7 @@ Está servindo na porta 5100. Como uma próxima etapa, tinha planos de subir o s
 
 # API route
 
-``` URL_API/query_items ```: retornará uma lista com as linhas que de certa forma mais se assemelham com o texto informado.
+```POST URL_API/query_items ```: retornará uma lista com as linhas que de certa forma mais se assemelham com o texto informado (retornando status 200). Caso não seja encontrado nenhum registro, é retornado 404.
 
 ```
 {
